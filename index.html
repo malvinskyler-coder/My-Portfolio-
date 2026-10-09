@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Malvin | Web Developer</title>
+
+    <meta name="description" content="Welcome to Malvin's portfolio. I build responsive websites and digital experiences for individuals and businesses.">
+
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card: #151b2b;
+            --text: #f5f7ff;
+            --muted: #aab3c5;
+            --accent: #38bdf8;
+            --border: #293449;
+        }
+
+        body.light {
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --text: #101827;
+            --muted: #566176;
+            --accent: #0284c7;
+            --border: #dce3ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: 0.3s;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 14px;
+            background: var(--accent);
+            color: #07111d;
+            font-weight: bold;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .badge {
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 30px;
+            padding: 6px 15px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 8vw, 72px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--accent);
+            color: #07111d;
+            text-decoration: none;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button.secondary {
+            color: var(--text);
+            background: transparent;
+            border: 1px solid var(--border);
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Malvin.dev</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <button id="themeToggle" type="button">Light Mode</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="badge">Available for Freelance Projects</div>
+
+            <h1>Hello, I'm <span>Malvin.</span><br>
+                I Build for the Web.</h1>
+
+            <p>
+                I'm an aspiring web developer passionate about creating
+                modern, responsive websites that help individuals and
+                businesses establish their presence online.
+            </p>
+
+            <div>
+                <a href="#projects" class="button">View My Work</a>
+                <a href="#contact" class="button secondary">Contact Me</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+
+            <p class="about">
+                I'm building my skills in web development and digital
+                technology. My goal is to create clean, user-friendly
+                websites that look great on phones, tablets, and computers.
+                I'm learning, improving, and working toward helping
+                businesses grow online.
+            </p>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">My Services</h2>
+
+            <p class="section-subtitle">
+                Digital solutions I'm developing my skills to provide.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Website Design</h3>
+                    <p>
+                        Clean, modern website layouts designed to make
+                        your brand stand out.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Website Development</h3>
+                    <p>
+                        Responsive websites built with HTML, CSS,
+                        and JavaScript.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Business Websites</h3>
+                    <p>
+                        Websites that help businesses present their
+                        services and connect with customers.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Graphic Design</h3>
+                    <p>
+                        Creative digital graphics and visual content
+                        for personal and business brands.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+
+            <p class="section-subtitle">
+                My portfolio will grow as I complete more projects.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        This website introduces me, presents my skills,
+                        and gives potential clients a way to contact me.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Business Landing Page</h3>
+                    <p>
+                        A future project focused on helping a small
+                        business showcase its services online.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Creative Website</h3>
+                    <p>
+                        A future project exploring modern layouts,
+                        responsive design, and interactive features.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="section-title">Let's Work Together</h2>
+
+            <p>
+                Have a project or need a website? Let's talk about it.
+            </p>
+
+            <a class="button"
+               href="https://wa.me/2340000000000"
+               target="_blank"
+               rel="noopener noreferrer">
+                Contact Me on WhatsApp
+            </a>
+
+            <p style="margin-top: 15px; font-size: 12px;">
+                Replace the sample WhatsApp number in the code
+                with your real number before publishing.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="year"></span> Malvin.dev.
+            Built with HTML, CSS and JavaScript.
+        </p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        themeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("light");
+
+            if (document.body.classList.contains("light")) {
+                themeToggle.textContent = "Dark Mode";
+            } else {
+                themeToggle.textContent = "Light Mode";
+            }
+        });
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
